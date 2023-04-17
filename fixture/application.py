@@ -1,5 +1,6 @@
 from selenium import webdriver
 from fixture.session import SessionHelper
+from fixture.MantisProject import MantisProjectHelper
 
 class Application:
 
@@ -14,6 +15,7 @@ class Application:
             raise ValueError("Unrecognized browser %s" % browser)
         self.wd.implicitly_wait(3)
         self.session = SessionHelper(self)
+        self.MantisProject = MantisProjectHelper(self)
         self.base_url = base_url
 
     def is_valid(self):
