@@ -45,11 +45,11 @@ class MantisProjectHelper:
 
     def main_manage_page(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector("a[href='/mantisbt-1.2.20/manage_overview_page.php']").click()
+        wd.get(self.app.base_url + "/manage_overview_page.php")
 
     def manage_projects(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector("a[href='/mantisbt-1.2.20/manage_proj_page.php']").click()
+        wd.get(self.app.base_url + "/manage_proj_page.php")
 
     def fill_project_info(self, project):
         wd = self.app.wd
