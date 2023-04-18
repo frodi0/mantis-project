@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from model.MantisProject import Project
+from model.mantisproject import Project
 
 
 class MantisProjectHelper:
@@ -31,6 +31,7 @@ class MantisProjectHelper:
                 name = cells[0].text
                 self.project_cache.append(Project(id=id, name=name))
         return list(self.project_cache)
+
 
     def delete_project(self, id):
         wd = self.app.wd

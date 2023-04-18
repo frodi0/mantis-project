@@ -1,6 +1,6 @@
 from selenium import webdriver
 from fixture.session import SessionHelper
-from fixture.MantisProject import MantisProjectHelper
+from fixture.mantisproject import MantisProjectHelper
 from fixture.james import JamesHelper
 from fixture.signup import SignupHelper
 from fixture.mail import MailHelper
@@ -19,7 +19,7 @@ class Application:
             raise ValueError("Unrecognized browser %s" % browser)
         self.wd.implicitly_wait(3)
         self.session = SessionHelper(self)
-        self.MantisProject = MantisProjectHelper(self)
+        self.mantisproject = MantisProjectHelper(self)
         self.james = JamesHelper(self)
         self.signup = SignupHelper(self)
         self.mail = MailHelper(self)
