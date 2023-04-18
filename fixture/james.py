@@ -18,7 +18,7 @@ class JamesHelper:
     class Session:
 
         def __init__(self, host, port, username, password):
-            self.telnet = Telnet(host, port, 5)
+            self.telnet = Telnet(host, port, 8)
             self.read_until("Login id:")
             self.write(username + "\n")
             self.read_until("Password:")
@@ -26,7 +26,7 @@ class JamesHelper:
             self.read_until("Welcome root. HELP for a list of commands")
 
         def read_until(self, text):
-            self.telnet.read_until(text.encode('ascii'), 5)
+            self.telnet.read_until(text.encode('ascii'), 8)
 
         def write(self, text):
             self.telnet.write(text.encode('ascii'))
